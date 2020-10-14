@@ -1,0 +1,19 @@
+#define v vector
+void rec(v<v<int>> &ans, int i, v<int> A, v<int> temp){
+    int n = A.size();
+    if(i >= n)
+        return ;
+    ans.push_back(temp);
+    for(i=i+1; i < n; i++){
+        v<int> t(temp);
+        t.push_back(A[i]);
+        rec(ans, i, A, t);
+    }
+}
+vector<vector<int> > Solution::subsets(vector<int> &A) {
+    v<int> temp;
+    v<v<int>> ans;
+    sort(A.begin(), A.end());
+    rec(ans, -1, A, temp);
+    return ans;
+}
