@@ -1,0 +1,8 @@
+int Solution::climbStairs(int A) {
+    vector<int> steps(A);
+    steps[0] = 1;
+    steps[1] = 2;
+    for(int i=2; i<A; i++)
+        steps[i] = steps[i-1] + steps[i-2];
+    return steps[A-1];
+}
